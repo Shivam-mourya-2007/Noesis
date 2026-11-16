@@ -1,0 +1,118 @@
+/* ========== PHASE 1: BACKGROUND & LAYOUT ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #212121;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility utility for invisible semantic content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wordmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+#stage {
+  width: min(90vw, 1100px);
+  height: auto;
+  display: block;
+}
+
+/* ========== PHASE 3: STROKE INITIAL STATES ========== */
+.stroke {
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1;
+  visibility: hidden;
+  will-change: stroke-dashoffset;
+}
+
+/* Debug centerline overlay (Phase 3) */
+.debug-centerline {
+  fill: none;
+  stroke: #ff3333;
+  stroke-width: 1px;
+  pointer-events: none;
+}
+
+/* ========== HERO CONTENT & CALL TO ACTION ========== */
+.hero-content {
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  pointer-events: auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1.5rem;
+}
+
+/* Hide hero content when JS is active; intro timeline will reveal it */
+.js .hero-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tagline {
+  margin: 0 0 1.25rem 0;
+  font-size: clamp(16px, 2.2vw, 22px);
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  color: #f5f5f5;
+  border: 1px solid rgba(245, 245, 245, 0.4);
+  font-size: clamp(14px, 1.5vw, 16px);
+  letter-spacing: 0.03em;
+  background: transparent;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}

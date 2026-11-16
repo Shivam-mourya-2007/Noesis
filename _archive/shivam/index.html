@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivam &mdash; Creative Developer</title>
+  <script>
+    // Set "js" class immediately to ensure progressive enhancement (Phase 1 / 10)
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="hero" id="hero">
+    <h1 class="sr-only">Shivam</h1>
+    <div class="wordmark" id="wordmark">
+      <svg id="stage" viewBox="0 0 1020 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false" style="overflow:visible">
+        <defs>
+          <!-- Phase 2: Soft drop shadow for macOS-style arrow cursor -->
+          <filter id="cursor-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#000" flood-opacity="0.55"/>
+          </filter>
+          <!-- Phase 9: Subtle glow on the finished wordmark -->
+          <filter id="word-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ffffff" flood-opacity="0.35"/>
+          </filter>
+        </defs>
+
+        <!-- Phase 3: The Letters (stroke order: S, H, I, V, A, M = 9 strokes total) -->
+        <g id="letters" fill="none" stroke="#F5F5F5" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+          <g id="letter-s"><path class="stroke" pathLength="1" d="M 192 130 C 182 110 162 100 140 100 C 110 100 88 118 88 146 C 88 172 112 182 140 194 C 168 206 192 222 192 252 C 192 282 168 300 140 300 C 112 300 92 292 82 268"/></g>
+          <g id="letter-h">
+            <path class="stroke" pathLength="1" d="M 240 100 L 240 300"/>
+            <path class="stroke" pathLength="1" d="M 370 100 L 370 300"/>
+            <path class="stroke" pathLength="1" d="M 240 200 L 370 200"/>
+          </g>
+          <g id="letter-i"><path class="stroke" pathLength="1" d="M 412 100 L 412 300"/></g>
+          <g id="letter-v"><path class="stroke" pathLength="1" d="M 456 100 L 531 300 L 606 100"/></g>
+          <g id="letter-a">
+            <path class="stroke" pathLength="1" d="M 567 300 L 647 100 L 727 300"/>
+            <path class="stroke" pathLength="1" d="M 591 240 L 703 240"/>
+          </g>
+          <g id="letter-m"><path class="stroke" pathLength="1" d="M 760 300 L 760 100 L 850 240 L 940 100 L 940 300"/></g>
+        </g>
+
+        <!-- Phase 2: Arrow Cursor (tip is at 0,0 of #cursor group) -->
+        <g id="cursor" opacity="0">
+          <g id="cursor-art" filter="url(#cursor-shadow)" transform="scale(1.6) translate(-8.2 -4.9)">
+            <polygon fill="#FFFFFF" points="8.2,20.9 8.2,4.9 19.8,16.5 13,16.5 12.6,16.6"/>
+            <polygon fill="#FFFFFF" points="17.3,21.6 13.7,23.1 9,12 12.7,10.5"/>
+            <rect x="12.5" y="13.6" transform="matrix(0.9221 -0.3871 0.3871 0.9221 -5.7605 6.5909)" width="2" height="8"/>
+            <polygon points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-content" id="heroContent">
+      <p class="tagline">Creative Developer</p>
+      <a class="cta" href="#work">Explore my work &rarr;</a>
+    </div>
+  </main>
+
+  <!-- Pinned GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.1/gsap.min.js" integrity="sha512-VMHB/Dy1/3d+djJPdMhxbplbZgbfPNHy+yWCxB1MSrwUEcNE+gnviL/DwlGsh9wwobnRTiQc6ChK2ZoJamshXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="intro.js" defer></script>
+</body>
+</html>
